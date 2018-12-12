@@ -2,7 +2,7 @@ version: "3"
 services:
   satosa:
     build:
-      context: SATOSA/
+      context: SATOSA
     image: local/satosa
     container_name: satosa
     hostname: satosa

@@ -1,5 +1,9 @@
 pipeline {
     agent any
+    environment {
+        compose_cfg='docker-compose.yaml'
+        compose_f_opt=''
+    }
     options { disableConcurrentBuilds() }
     parameters {
         string(defaultValue: 'True', description: '"True": initial cleanup: remove container and volumes; otherwise leave empty', name: 'start_clean')
@@ -14,11 +18,11 @@ pipeline {
                 sh '''
                    if [[ "$DOCKER_REGISTRY_USER" ]]; then
                         echo "  Docker registry user: $DOCKER_REGISTRY_USER"
-                        ./dcshell/update_config.sh docker-compose.yaml.default > docker-compose.yaml
+                        ./dcshell/update_config.sh "${compose_cfg}.default" $compose_cfg
                     else
-                        cp docker-compose.yaml.default docker-compose.yaml
+                        cp "${compose_cfg}.default" $compose_cfg
                     fi
-                    head docker-compose.yaml
+                    grep ' image:' $compose_cfg || echo "missing key 'service.image' in ${compose_cfg}"
                 '''
             }
         }
@@ -34,13 +38,7 @@ pipeline {
         }
         stage('Build') {
             steps {
-                sh '''#!/bin/bash -xe
-                    [[ "$nocache" ]] && nocacheopt='-c' && echo 'build with option nocache'
-                    export MANIFEST_SCOPE='local'
-                    export PROJ_HOME='.'
-                    ./dcshell/build $nocacheopt
-                    echo "=== build completed with rc $?"
-                '''
+                sh 'docker-compose build'
             }
         }
         stage('Push ') {
@@ -51,7 +49,6 @@ pipeline {
                 sh '''
                     default_registry=$(docker info 2> /dev/null |egrep '^Registry' | awk '{print $2}')
                     echo "  Docker default registry: $default_registry"
-                    export MANIFEST_SCOPE='local'
                     export PROJ_HOME='.'
                     ./dcshell/build -P
                 '''
