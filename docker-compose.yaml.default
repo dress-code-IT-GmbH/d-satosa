@@ -1,0 +1,22 @@
+version: "3"
+services:
+  satosa:
+    build:
+      context: SATOSA/
+    image: local/satosa
+    container_name: satosa
+    hostname: satosa
+    restart: unless-stopped
+    environment:
+      CONTAINERUSER: pvzdfe
+    networks:
+      dfrontend:
+    ports:
+      - "8000:8000"
+    volumes:
+      - satosa.opt_satosa_etc:/opt/satosa/etc:Z
+networks:
+  dfrontend:
+    external: true
+volumes:
+    satosa.opt_satosa_etc:

@@ -1,0 +1,6 @@
+[submodule "SATOSA"]
+	path = SATOSA
+	url = https://github.com/identitypython/SATOSA
+[submodule "dcshell"]
+	path = dcshell
+	url = https://github.com/identinetics/dcshell
