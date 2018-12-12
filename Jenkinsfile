@@ -14,7 +14,7 @@ pipeline {
                 sh '''
                    if [[ "$DOCKER_REGISTRY_USER" ]]; then
                         echo "  Docker registry user: $DOCKER_REGISTRY_USER"
-                        ./dcshell/update_config.sh dc.yaml.default > docker-compose.yaml
+                        ./dcshell/update_config.sh docker-compose.yaml.default > docker-compose.yaml
                     else
                         cp docker-compose.yaml.default docker-compose.yaml
                     fi
@@ -34,7 +34,7 @@ pipeline {
         }
         stage('Build') {
             steps {
-                sh '''#!/bin/bash
+                sh '''#!/bin/bash -xe
                     [[ "$nocache" ]] && nocacheopt='-c' && echo 'build with option nocache'
                     export MANIFEST_SCOPE='local'
                     export PROJ_HOME='.'
