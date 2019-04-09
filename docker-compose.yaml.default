@@ -1,22 +1,23 @@
-version: "3"
+version: "3.5"
 services:
   satosa:
     build:
-      context: SATOSA
+      context: .
+      dockerfile: Dockerfile.centos
     image: local/satosa
-    container_name: satosa
     hostname: satosa
-    restart: unless-stopped
-    environment:
-      CONTAINERUSER: pvzdfe
     networks:
-      dfrontend:
-    ports:
-      - "8000:8000"
+      jenkins:
+    # ports:
+    #   - "8000:8000"
+    restart: unless-stopped
     volumes:
-      - satosa.opt_satosa_etc:/opt/satosa/etc:Z
+      - satosa.opt_etc_satosa:/opt/etc/satosa/:Z
+
 networks:
-  dfrontend:
-    external: true
+  jenkins:
+    name: jenkins
+
 volumes:
-    satosa.opt_satosa_etc:
+    satosa.opt_etc_satosa:
+      name: satosa.opt_etc_satosa
