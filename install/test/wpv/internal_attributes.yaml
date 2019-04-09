@@ -1,0 +1,55 @@
+attributes:
+  address:
+    openid: [address.street_address]
+    saml: [postaladdress]
+  addr_country:
+    saml: [country]
+  authenticationClass:
+    saml: [authenticationClass]
+  displayname:
+    openid: [nickname]
+    saml: [displayName]
+  gender:
+    saml: [gender]
+  gln:
+    saml: [gln]
+  givenname:
+    openid: [given_name]
+    saml: [givenName]
+  mail:
+    openid: [email]
+    saml: [email, emailAdress, mail]
+  name:
+    openid: [name]
+    saml: [cn, commonName]
+  organizationName:
+    saml: [organizationName]
+  orgSourcePin:
+    saml: [orgSourcePin]
+  rights:
+    saml: [rights]
+  registrationClassOrg:
+    saml: [registrationClassOrg]
+  registrationClassUser:
+    saml: [registrationClassUser]
+  surname:
+    openid: [family_name]
+    saml: [sn, surname]
+ # targetedid:
+ #   facebook: [id]
+ #   linkedin: [id]
+ #   github: [id]
+ #   openid: [sub]
+  gid:
+    saml: [gid]
+  telephoneNumber:
+    saml: telephoneNumber
+  title:
+    saml: [title]
+  uid:
+    saml: [uid]
+  wbpkHash:
+    saml: [wbpkHash]
+
+#user_id_from_attrs: [targetedid]
+#user_id_to_attr: targetedid

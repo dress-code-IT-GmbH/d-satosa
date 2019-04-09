@@ -1,0 +1,39 @@
+module: satosa.backends.saml2.SAMLBackend
+name: saml2
+config:
+  idp_blacklist_file: /path/to/blacklist.json
+  sp_config:
+    key_file: keys/backend_key.pem
+    cert_file: keys/backend_crt.pem
+    organization: {display_name: "Austria  Pro AK WPV", name: "Austria  Pro AK WPV", url: 'http://www.wirtschaftsportalverbund.at'}
+    contact_person:
+    - {contact_type: technical, email_address: technical@example.com, given_name: Technical}
+    - {contact_type: support, email_address: support@example.com, given_name: Support}
+
+    metadata:
+      local: [metadata/idp1TestWpvPortalverbundAt_idpXml.xml]
+
+    entityid: <base_url>/sp/proxy_backend.xml
+    accepted_time_diff: 60
+    service:
+      sp:
+        ui_info:
+          display_name:
+            - lang: en
+              text: "WPV Proxy SP Backend"
+          description:
+            - lang: en
+              text: "WPV Proxy SP Backend"
+        authn_requests_signed: false
+        want_response_signed: true
+        allow_unsolicited: true
+        endpoints:
+          assertion_consumer_service:
+          - [<base_url>/<name>/acs/post, 'urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST']
+          - [<base_url>/<name>/acs/redirect, 'urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect']
+          discovery_response:
+          - [<base_url>/<name>/disco, 'urn:oasis:names:tc:SAML:profiles:SSO:idp-discovery-protocol']
+        name_id_format: 'urn:oasis:names:tc:SAML:2.0:nameid-format:transient'
+        name_id_format_allow_create: true
+  # disco_srv must be defined if there is more than one IdP in the metadata specified above
+  # disco_srv: http://disco.example.com
