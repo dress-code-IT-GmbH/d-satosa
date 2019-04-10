@@ -4,15 +4,16 @@ services:
     build:
       context: .
       dockerfile: Dockerfile.centos
-    image: local/satosa
+    image: r2h2/satosa
     hostname: satosa
     networks:
       jenkins:
-    # ports:
-    #   - "8000:8000"
+    ports:
+       - "2022:2022"
     restart: unless-stopped
     volumes:
       - satosa.opt_etc_satosa:/opt/etc/satosa/:Z
+      - satosa.etc_ssh:/etc/ssh:Z
 
 networks:
   jenkins:
@@ -21,3 +22,5 @@ networks:
 volumes:
     satosa.opt_etc_satosa:
       name: satosa.opt_etc_satosa
+    satosa.etc_ssh:
+      name: satosa.etc_ssh
