@@ -51,7 +51,6 @@ RUN echo changeit | passwd -f --stdin root \
  && echo 'GSSAPIAuthentication no' >> /etc/ssh/sshd_config \
  && echo 'useDNS no' >> /etc/ssh/sshd_config \
  && rm -f /etc/ssh/ssh_host_*_key
-COPY install/etc/ssh/sshd_config /etc/sshd_config
 VOLUME /etc/sshd
 EXPOSE 2022
 
