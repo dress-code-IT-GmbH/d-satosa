@@ -5,6 +5,9 @@ services:
       context: .
       dockerfile: Dockerfile.centos
     image: r2h2/satosa
+    environment:
+      # configure TARGET_ENTITYID to temporarily fix SATOSA issue #218
+      TARGET_ENTITYID: https://idp1.test.wpv.portalverbund.at/idp/shibboleth
     hostname: satosa
     networks:
       jenkins:
