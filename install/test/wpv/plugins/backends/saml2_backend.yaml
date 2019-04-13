@@ -1,7 +1,6 @@
 module: satosa.backends.saml2.SAMLBackend
 name: saml2
 config:
-  idp_blacklist_file: /path/to/blacklist.json
   sp_config:
     key_file: keys/backend_key.pem
     cert_file: keys/backend_crt.pem

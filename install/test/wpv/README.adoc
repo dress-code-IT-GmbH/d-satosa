@@ -1,0 +1,30 @@
+= WPV SAML 2 SAML IDP-Proxy Konfiguration
+
+== Konzept
+Der IDP-Proxy des WPV bindet mehrere SPs der Federation an einen IDP.
+Folgende Funktionalität soll damit bereitgestellt werden:
+
+- 1:n Proxy: Gegenüber dem WKIS-IDP erscheinen alle SPs des WPV als einziger SP.
+- Behandlung des WKIS Redirect Claims, der nicht an die SPs weitergegeben werden soll.
+  Damit wird die SAMl-Interoperabilität bewahrt.
+- Metadaten-gesteuertes Deployment. Die Einbindung von SPs wird gegenüber ADFS vereinfacht,
+  indem der Proxy die Metadaten dynamisch lädt (entsprechend SAML-Meta-IOP Spezifikation).
+  Die Berechtigung der SPs für WKIS erfolgt über eine Whitelist.
+
+== Umsetzung
+
+Die Implementierung erfolgt mit folgdender SATOSA-Konfiguraton:
+
+=== SAML Frontend-Plugin
+Diese SAML-Schnittstelle implementiert das WPV SAML-Profil.
+Der Proxy wird als WKIS-IDP implemenitert, und übernimmt die bisherige entityID.
+SAML NameIDs von WKIS werden unverändert übernommen
+
+=== SAML Backend-Plugin
+
+=== Microservices
+
+* DecideIfRequesterIsAllowed: Enforcement der SP-Whitelist, die von der Relying-Party Manager App erzeugt wird.
+  Nach einer Änderung der Whitelit muss SATOSA neu gestartet werden.
+* WkisRedirClaim: Behandelt WKIS Redirect Claim
+

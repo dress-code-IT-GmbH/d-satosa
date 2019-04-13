@@ -35,8 +35,10 @@ config:
           default:
             sign_response: True
             sign_assertion: False
-            sign_alg: "http://www.w3.org/2001/04/xmldsig-more#rsa-sha256"
-            digest_alg: "http://www.w3.org/2001/04/xmlenc#sha256"
+            #sign_alg: "http://www.w3.org/2001/04/xmldsig-more#rsa-sha256"
+            sign_alg: 'SIG_RSA_SHA256'
+            #digest_alg: "http://www.w3.org/2001/04/xmlenc#sha256"
+            digest_alg: 'DIGEST_SHA256'
             attribute_restrictions: null
             fail_on_missing_requested: false
             lifetime: {minutes: 15}
