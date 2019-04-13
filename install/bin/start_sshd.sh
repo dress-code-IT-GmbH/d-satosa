@@ -23,6 +23,7 @@ usage() {
     echo "usage: $0 [-d] [-h]
        -d  start in background (default: foreground)
        -h  print this help text
+       "
 }
 
 
@@ -39,15 +40,14 @@ patch_sshd_config() {
 }
 
 create_sshd_keys() {
-    [[ -e /etc/ssh/ssh_host_rsa_key ]] || ssh-keygen -q -N '' -t rsa -f /etc/ssh/ssh_host_rsa_key
-    [[ -e /etc/ssh/ssh_host_ecdsa_key ]] || ssh-keygen -q -N '' -t ecdsa -f /etc/ssh/ssh_host_ecdsa_key
-    [[ -e /etc/ssh/ssh_host_ed25519_key ]] || ssh-keygen -q -N '' -t ed25519 -f /etc/ssh/ssh_host_ed25519_key
+    [[ -e /opt/etc/ssh/ssh_host_rsa_key ]] || ssh-keygen -q -N '' -t rsa -f /opt/etc/ssh/ssh_host_rsa_key
+    [[ -e /opt/etc/ssh/ssh_host_ecdsa_key ]] || ssh-keygen -q -N '' -t ecdsa -f /opt/etc/ssh/ssh_host_ecdsa_key
+    [[ -e /opt/etc/ssh/ssh_host_ed25519_key ]] || ssh-keygen -q -N '' -t ed25519 -f /opt/etc/ssh/ssh_host_ed25519_key
 }
 
 
 start_sshd() {
-    echo 'starting sshd in foreground'
-    echo 'terminating this service may terminate the container'
+    echo 'starting sshd'
     /usr/sbin/sshd ${daemonmode} -f /opt/etc/ssh/sshd_config
     # login like 'ssh -o "StrictHostKeyChecking no" -i ~/.ssh/id_ed25519_loopback -p 2022 <someuser>@thishost'
 }
