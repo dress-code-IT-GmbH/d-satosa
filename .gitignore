@@ -1,5 +1,6 @@
 .DS_Store
 .idea/
+install/test/wpv/metadata/
 temp/
 work/
-x.*
+
