@@ -10,11 +10,11 @@ RUN yum -y update \
 
 #RUN mkdir -p /src/satosa
 COPY SATOSA /src/satosa
-RUN python3 -m venv /opt/satosa \
+RUN python3 -m venv /opt/venv \
  && echo 'source /opt/satosa/bin/activate' > /etc/profile.d/pyenv.sh \
  && source /etc/profile.d/pyenv.sh \
  && sync \
- && /src/satosa/docker/setup.sh \
+ && /opt/venv/bin/pip install /src/satosa/ \
 COPY SATOSA/docker/attributemaps /opt/satosa/attributemaps
 COPY SATOSA/docker/start.sh /opt/bin/start.sh
 
@@ -53,4 +53,3 @@ RUN echo changeit | passwd -f --stdin root \
  && rm -f /etc/ssh/ssh_host_*_key
 VOLUME /etc/sshd
 EXPOSE 2022
-
