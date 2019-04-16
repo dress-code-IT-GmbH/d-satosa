@@ -29,3 +29,5 @@ Attribue Mapping
     /Users/admin/devl/docker/identinetics/d-satosa/work/pysaml2/src/saml2/soap.py:162
 
 - satosa.attribute_mapping._collate_attribute_values_by_priority_order() should be case-insensitive
+
+- logger.warn -> - logger.warning
