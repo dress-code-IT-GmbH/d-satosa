@@ -1,9 +1,9 @@
 attributes:
   address:
     openid: [address.street_address]
-    saml: [postaladdress]
+    saml: [postalAddress]
   addr_country:
-    saml: [country]
+    saml: [c]
   authenticationClass:
     saml: [authenticationClass]
   displayname:
@@ -11,45 +11,47 @@ attributes:
     saml: [displayName]
   gender:
     saml: [gender]
-  gln:
-    saml: [gln]
+  gid:
+    saml: [gid]
   givenname:
     openid: [given_name]
     saml: [givenName]
+  gln:
+    saml: [gln]
   mail:
     openid: [email]
-    saml: [email, emailAdress, mail]
+    saml: [mail]
   name:
     openid: [name]
-    saml: [cn, commonName]
+    saml: [cn]
+  locality:
+    saml: [l]
   organizationName:
-    saml: [organizationName]
+    saml: [o]
   orgSourcePin:
     saml: [orgSourcePin]
-  rights:
-    saml: [rights]
+  postalCode:
+    saml: [postalCode]
+  preferredLanguage:
+    saml: [preferredLanguage]
   registrationClassOrg:
     saml: [registrationClassOrg]
   registrationClassUser:
     saml: [registrationClassUser]
+  rights:
+    saml: [rights]
+  street:
+    saml: [street]
   surname:
     openid: [family_name]
     saml: [sn, surname]
- # targetedid:
- #   facebook: [id]
- #   linkedin: [id]
- #   github: [id]
- #   openid: [sub]
-  gid:
-    saml: [gid]
   telephoneNumber:
-    saml: telephoneNumber
+    saml: [telephoneNumber]
   title:
     saml: [title]
   uid:
     saml: [uid]
   wbpkHash:
     saml: [wbpkHash]
-
-#user_id_from_attrs: [targetedid]
-#user_id_to_attr: targetedid
+  RedirectUrl:
+    saml: [wkisRedirect]

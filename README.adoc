@@ -1,0 +1,34 @@
+= SATOSA Packaging for SAML-to-SAML Proxy
+
+
+== Development
+
+=== SATOSA Proxy Debugging
+
+Remote Debugging is difficult with Gunicorn, because the debugger does not automatically attach to worker processes -> breakpoints do not catch.
+
+Alternative configuration: run Gunicorn on Mac/Pycharm, and forward the proxy requests from devl11.
+
+Repairing: Error "[__NSPlaceholderDate initialize] may have been in progress in another thread when fork() was called."
+This is fixed with 
+    
+        export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
+        
+satosa.vnet is configured on 02nginx@devl11.
+
+=== Tracing
+
+Add logger with TRACE level and useful format in proxy_server.py, remove LOGGING entry on proxy_conf.yaml:
+
+    def make_app(satosa_config):
+        try:
+           if "LOGGING" in satosa_config:
+                logging.config.dictConfig(satosa_config["LOGGING"])
+           else:
+                logging.basicConfig(level=autologging.TRACE, stream=sys.stdout,
+                                    format="%(levelname)s:%(name)s:%(funcName)s:%(message)s")
+
+Then decorate interesting classes:
+
+    from autologging import traced
+    @traced(logging.getLogger("tracing.example"))

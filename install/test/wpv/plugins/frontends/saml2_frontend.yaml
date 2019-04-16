@@ -18,6 +18,7 @@ config:
 
     entityid: <base_url>/idp_proxy.xml
     accepted_time_diff: 60
+    attribute_map_dir : attributemaps
     service:
       idp:
         endpoints:

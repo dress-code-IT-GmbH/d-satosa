@@ -1,0 +1,31 @@
+This error message should not appear with Llevel ERROR:
+
+ERROR:satosa.state:cookie_to_state:No cookie named SATOSA_STATE in
+Traceback (most recent call last):
+  File "/Users/admin/devl/docker/identinetics/d-satosa/SATOSA/src/satosa/state.py", line 73, in cookie_to_state
+    state = State(cookie[name].value, encryption_key)
+KeyError: 'SATOSA_STATE'
+WARNING:satosa.base:satosa_logging:[UNKNOWN] Failed to decrypt state  with No cookie named SATOSA_STATE in
+
+
+Attribue Mapping
+
+- Explain the "saml" profile in detail
+- satosa attribute profile is replacing, not extending pysaml2
+- split huge saml2 map into base map + extensions
+- alias names (l, c, o) do not work, e.g.:
+
+      country:
+        saml: [country, c]
+
+– internal attribute mappings must be lists. If string each character will be iterated -> mess
+  allow scalars, or add assertion
+
+- doc: attribute_map_dir must be declared in both frontend and backend ()
+
+- remove deprecation warning with raw string:
+
+    /Users/admin/devl/docker/identinetics/d-satosa/SATOSA/src/satosa/frontends/saml2.py:684: DeprecationWarning: invalid escape sequence \S
+    /Users/admin/devl/docker/identinetics/d-satosa/work/pysaml2/src/saml2/soap.py:162
+
+- satosa.attribute_mapping._collate_attribute_values_by_priority_order() should be case-insensitive

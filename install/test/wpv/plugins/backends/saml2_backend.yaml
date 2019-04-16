@@ -14,6 +14,7 @@ config:
 
     entityid: <base_url>/sp/proxy_backend.xml
     accepted_time_diff: 60
+    attribute_map_dir : attributemaps
     service:
       sp:
         ui_info:
