@@ -4,6 +4,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile.centos
+    container_name: satosa
     image: r2h2/satosa
     environment:
       # configure TARGET_ENTITYID to temporarily fix SATOSA issue #218
