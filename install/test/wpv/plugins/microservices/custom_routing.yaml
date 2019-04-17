@@ -11,7 +11,7 @@ config:
     https://idp1.test.wpv.portalverbund.at/idp/shibboleth:
       allow:
         - https://sp1.test.wpv.portalverbund.at/sp.xml
-        - https://sp2.test.wpv.portalverbund.at/sp.xml
+        - https://sp2.test.wpv.portalverbund.at/sp
         - https://sp3.test.wpv.portalverbund.at/sp.xml
         - https://sp4.test.wpv.portalverbund.at/sp.xml
       deny: ['*']

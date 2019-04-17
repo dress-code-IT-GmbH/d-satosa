@@ -1,0 +1,4 @@
+module: satosa.micro_services.return_to_adfs.ReturnToAdfs
+name: ReturnToAdfs
+config:
+  redirect_url_attr: RedirectUrl

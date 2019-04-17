@@ -14,7 +14,7 @@ FRONTEND_MODULES:
 MICRO_SERVICES:
   - "plugins/microservices/static_attributes.yaml"
   - "plugins/microservices/custom_routing.yaml"
-  - "plugins/microservices/redirect_url.yaml"
+  - "plugins/microservices/return_to_adfs.yaml"
 #LOGGING:
 #  version: 1
 #  formatters:
