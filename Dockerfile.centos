@@ -11,10 +11,10 @@ RUN yum -y update \
 #RUN mkdir -p /src/satosa
 COPY SATOSA /src/satosa
 RUN python3 -m venv /opt/venv \
- && echo 'source /opt/satosa/bin/activate' > /etc/profile.d/pyenv.sh \
+ && echo 'source /opt/venv/bin/activate' > /etc/profile.d/pyenv.sh \
  && source /etc/profile.d/pyenv.sh \
  && sync \
- && /opt/venv/bin/pip install /src/satosa/ \
+ && /opt/venv/bin/pip install /src/satosa/
 COPY SATOSA/docker/attributemaps /opt/satosa/attributemaps
 COPY SATOSA/docker/start.sh /opt/bin/start.sh
 
