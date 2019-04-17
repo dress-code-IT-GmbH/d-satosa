@@ -31,3 +31,10 @@ Attribue Mapping
 - satosa.attribute_mapping._collate_attribute_values_by_priority_order() should be case-insensitive
 
 - logger.warn -> - logger.warning
+
+- Exception disguising instead of reraising:
+    File "/Users/admin/devl/docker/identinetics/d-satosa/SATOSA/src/satosa/base.py", line 303, in run
+    raise SATOSAUnknownError("Unknown error") from err
+    In general: satosa exceptions should be separated into config, pysaml2, etc.
+
+- Plugin-doc: proxy_conf.yaml -> ms.conf/module -> module
