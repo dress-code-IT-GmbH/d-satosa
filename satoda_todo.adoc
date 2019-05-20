@@ -1,4 +1,4 @@
-This error message should not appear with Llevel ERROR:
+This error message should not appear with level ERROR:
 
 ERROR:satosa.state:cookie_to_state:No cookie named SATOSA_STATE in
 Traceback (most recent call last):
@@ -32,7 +32,7 @@ Attribue Mapping
 
 - logger.warn -> - logger.warning
 
-- Exception disguising instead of reraising:
+- Exception disguising instead of re-raising:
     File "/Users/admin/devl/docker/identinetics/d-satosa/SATOSA/src/satosa/base.py", line 303, in run
     raise SATOSAUnknownError("Unknown error") from err
     In general: satosa exceptions should be separated into config, pysaml2, etc.

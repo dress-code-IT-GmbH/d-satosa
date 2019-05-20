@@ -18,7 +18,7 @@ pipeline {
         string(defaultValue: 'True', description: '"True": initial cleanup: remove container and volumes; otherwise leave empty', name: 'start_clean')
         string(description: '"True": "Set --nocache for docker build; otherwise leave empty', name: 'nocache')
         string(description: '"True": push docker image after build; otherwise leave empty', name: 'pushimage')
-        string(description: '"True": keep running after test; otherwise leave empty to delete container and volumes', name: 'keep_running')
+        //string(description: '"True": keep running after test; otherwise leave empty to delete container and volumes', name: 'keep_running')
     }
 
     stages {
@@ -64,7 +64,10 @@ pipeline {
                 '''
             }
         }
-        stage('Push ') {
+        /* stage('Run/Test') {
+            skipping this stage because of complex dependencies (SP, IDP, DNS, certificates, ..)
+        }*/
+        stage('Push') {
             when {
                 expression { params.pushimage?.trim() != '' }
             }

@@ -3,4 +3,6 @@
 install/test/wpv/metadata/
 temp/
 work/
+__pycache__/
+.pyc
 
