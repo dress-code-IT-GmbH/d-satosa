@@ -1,0 +1,53 @@
+attributes:
+#  address:
+#    saml: [postaladdress]
+#  addr_country:
+#    saml: [country]
+  authenticationClass:
+    saml: [authenticationClass]
+  displayname:
+    saml: [displayName]
+  gender:
+    saml: [gender]
+  gln:
+    saml: [gln]
+  givenname:
+    saml: [givenName]
+  mail:
+    saml: [email, emailAdress, mail]
+  name:
+    saml: [cn, commonName]
+  organizationName:
+    saml: [organizationName]
+  orgSourcePin:
+    saml: [orgSourcePin]
+  PossibleRoles:
+    saml: [PossibleRoles]
+  rights:
+    saml: [rights]
+  registrationClassOrg:
+    saml: [registrationClassOrg]
+  registrationClassUser:
+    saml: [registrationClassUser]
+  surname:
+    saml: [sn, surname]
+ # targetedid:
+ #   facebook: [id]
+ #   linkedin: [id]
+ #   github: [id]
+ #   openid: [sub]
+  gid:
+    saml: [gid]
+#  telephoneNumber:
+#    saml: telephoneNumber
+#  title:
+#    saml: [title]
+  uid:
+    saml: [uid]
+#  wbpkHash:
+#    saml: [wbpkHash]
+  WkisRedirect:
+    saml: [WkisRedirect]
+
+#user_id_from_attrs: [targetedid]
+#user_id_to_attr: targetedid

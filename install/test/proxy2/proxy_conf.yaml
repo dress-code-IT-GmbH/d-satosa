@@ -1,8 +1,8 @@
 #--- SATOSA Config ---#
-BASE: https://satosa.vnet
+BASE: https://proxy2.test.wpv.portalverbund.at
 INTERNAL_ATTRIBUTES: "internal_attributes.yaml"
 COOKIE_STATE_NAME: "SATOSA_STATE"
-STATE_ENCRYPTION_KEY: "asdASD123"
+STATE_ENCRYPTION_KEY: "WQpuhOELqGAs/ct2mujCqw"
 CUSTOM_PLUGIN_MODULE_PATHS:
   - "plugins/backends"
   - "plugins/frontends"
@@ -13,8 +13,9 @@ FRONTEND_MODULES:
   - "plugins/frontends/saml2_frontend.yaml"
 MICRO_SERVICES:
   - "plugins/microservices/static_attributes.yaml"
-  - "plugins/microservices/custom_routing.yaml"
-  - "plugins/microservices/redirect_url.yaml"
+  - "plugins/microservices/custom_routing_DecideIfRequesterIsAllowed.yaml"
+  - "plugins/microservices/redirect_url_request.yaml"
+  - "plugins/microservices/redirect_url_response.yaml"
 #LOGGING:
 #  version: 1
 #  formatters:
@@ -23,7 +24,7 @@ MICRO_SERVICES:
 #  handlers:
 #    console:
 #      class: logging.StreamHandler
-#      level: TRACE
+#      level: DEBUG
 #      formatter: simple
 #      stream: ext://sys.stdout
 #    info_file_handler:
@@ -36,9 +37,9 @@ MICRO_SERVICES:
 #      encoding: utf8
 #  loggers:
 #    satosa:
-#      level: TRACE
+#      level: DEBUG
 #      handlers: [console]
 #      propagate: no
 #  root:
-#    level: INFO
+#    level: TRACE
 #    handlers: [info_file_handler]

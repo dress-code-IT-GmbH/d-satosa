@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<EntityDescriptor ID="_73101e37-fd17-4d81-8d18-501eebb30272" entityID="http://wkis.qss.wko.at/adfs/services/trust" xmlns="urn:oasis:names:tc:SAML:2.0:metadata">
+  <Extensions>
+    <EntityAttributes xmlns="urn:oasis:names:tc:SAML:metadata:attribute">
+      <Attribute Name="http://macedir.org/entity-category" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri" xmlns="urn:oasis:names:tc:SAML:2.0:assertion">
+        <AttributeValue>http://wirtschaftsportalverbund.at/ns/ec/attributebundle-wkis</AttributeValue>
+      </Attribute>
+    </EntityAttributes>
+  </Extensions>
+  <IDPSSODescriptor protocolSupportEnumeration="urn:oasis:names:tc:SAML:2.0:protocol">
+    <Extensions>
+      <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256" xmlns="urn:oasis:names:tc:SAML:metadata:algsupport"/>
+      <SigningMethod MinKeySize="256" MaxKeySize="511" Algorithm="http://www.w3.org/2001/04/xmldsig-more#ecdsa-sha256" xmlns="urn:oasis:names:tc:SAML:metadata:algsupport"/>
+      <SigningMethod MinKeySize="2048" MaxKeySize="4096" Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha256" xmlns="urn:oasis:names:tc:SAML:metadata:algsupport"/>
+      <UIInfo xmlns="urn:oasis:names:tc:SAML:metadata:ui">
+        <DisplayName xml:lang="en">WKO Inhouse GmbH - IdP QSS</DisplayName>
+        <Description xml:lang="en">Qualitätssicherungumgebung der WKO</Description>
+      </UIInfo>
+    </Extensions>
+    <KeyDescriptor use="encryption">
+      <KeyInfo xmlns="http://www.w3.org/2000/09/xmldsig#">
+        <X509Data>
+          <X509Certificate>
+            MIIC4DCCAcigAwIBAgIQeGMjH+fjJa5CVnWhhBaD/TANBgkqhkiG9w0BAQsFADAsMSowKAYDVQQDEyFBREZTIEVuY3J5cHRpb24gLSB3a2lzLnFzcy53a28uYXQwHhcNMTgxMjE5MDc1MjM0WhcNMTkxMjE5MDc1MjM0WjAsMSowKAYDVQQDEyFBREZTIEVuY3J5cHRpb24gLSB3a2lzLnFzcy53a28uYXQwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQCwZAoAdMb9PWcRrKn6A1izYAEHxMQNc2LHWFHuOZNGBaQKK5OCAi8ju9rZc7oABFV56NGVbNu62DmThXgqfVnYHQ6dTImr7MdYvsj1FzF8zQnC8lrBuXks74V9rSNo7licVT56sSZraNhb2Dm3DlSqJ1bELhVbR3QV3TojzY38TRydT1HSi1c0JwvB274Hlva/+FZRxbzHvcLSsmDtxxA7LYVHA/AHnQn+ZgwMbsiKLEPxuIuBSmZCJas9Z0eSW5H6QVVbPTN9i7m1zekv5axQmBAm93RcwvZS4N/kDjW9Y9ntJ0ZcsUqaPq2mOetIiQse9hJJ2XW4YxqKoIs3bYHTAgMBAAEwDQYJKoZIhvcNAQELBQADggEBADLleNvoKzDn8qdRVW54jDxTi+1hCLUI7yfdxc6vb0YaHKVLf+mSdZCyScPIZ39fR+t1ikTgrQ/jJ4GRnCaB4gsq++iIS06SiTOAJYkvXd09+XN+990gM+PWslr8luvv8FBLGBoiiGRTy6mPHqym5veVzDiqvzoDNgNRJkH8ZOuR4GVqbly91fJTETZHbCdWA5V5TTL2n7fpe87A/ZQBGE9AeaQBmq1WnJbExIbShQjWF1PeMD4q76XGZuLXfRBLcoSbeGTVJEdlr0p2F/NfXGOT7HIww/9lZ9gioJOx3ox0Ar1bJ6PjoruvTEMWGqSmj8xk8MvnkPI//R4NEifF+lY=
+          </X509Certificate>
+        </X509Data>
+      </KeyInfo>
+    </KeyDescriptor>
+    <KeyDescriptor use="signing">
+      <KeyInfo xmlns="http://www.w3.org/2000/09/xmldsig#">
+        <X509Data>
+          <X509Certificate>
+            MIIC2jCCAcKgAwIBAgIQbHLNMdM16qlGJJ5k7Ltd3TANBgkqhkiG9w0BAQsFADApMScwJQYDVQQDEx5BREZTIFNpZ25pbmcgLSB3a2lzLnFzcy53a28uYXQwHhcNMTgwMjA3MTEzOTI0WhcNMTkwMjA3MTEzOTI0WjApMScwJQYDVQQDEx5BREZTIFNpZ25pbmcgLSB3a2lzLnFzcy53a28uYXQwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQCt3U27b/g9dalEdRGUKimKwnuNGv2ESdGRVhHUzBIeKqkrpkLqnUb46y5y7R/ZbeqexvZLJxnaijPDdTPYTdEuU7Dp6Ty1bi7bMUdYipsFxmP7gT0mRgbip2Z2Myo203Jm9D7EeezYi8piGpIvTm9tSQsnDoTjvMPNF3sV9DlO3z/JZ2L83cce52JbbabmUAfqjgprUz5P6XncWa52N+0/uv86/d5M6EnxZhuoKYfDusFBt2l+6ASlRYQ9vtR7nzd+s8E48+5lu5MUTHJqEopa/XgS8JXrJLCrhzrsxdWf2lOPjeDuTL7gYomJ9p7M2Khrj8jtFNcpUlX4wAyccDy5AgMBAAEwDQYJKoZIhvcNAQELBQADggEBAHl/ZbVlP004ElfGd7qlVzPYjUzF7Mfmn3V/o1rsFBdfSiaUblwVvV5AUkOTVuzyE4lU/+RS135u2eg0o0jzN77JUfTP85bQlWTz3ixzdU89GCUAtDzAvROUPaPq4BaoIsHezg43Ex4fMllnkSIkhEcOdtLRNFq6/jEio1FJphIeBHp8qOxR59F5NPLz+rS+ADmJeck9eAzbQUlWCA/3OsScEgXcXF2V9TtHlBv8FclQhqHgrJUBjUACcJoP2pwD4YbmqECl+oWI5R+3KlV8qzaCA1+gLxOzczmE+fYSZ9g7qNxedd9QlNZFf1uRN7eAcLszwplIMZXysKwJawQ/YpU=
+          </X509Certificate>
+        </X509Data>
+      </KeyInfo>
+    </KeyDescriptor>
+    <KeyDescriptor use="signing">
+      <KeyInfo xmlns="http://www.w3.org/2000/09/xmldsig#">
+        <X509Data>
+          <X509Certificate>
+            MIIC2jCCAcKgAwIBAgIQc8Har4U7fIlF/0Sq6uVhZDANBgkqhkiG9w0BAQsFADApMScwJQYDVQQDEx5BREZTIFNpZ25pbmcgLSB3a2lzLnFzcy53a28uYXQwHhcNMTgxMjE5MDc1MjA5WhcNMTkxMjE5MDc1MjA5WjApMScwJQYDVQQDEx5BREZTIFNpZ25pbmcgLSB3a2lzLnFzcy53a28uYXQwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQCwcio8bHEY2g7qd50pFXcPPMl21pLpn7bVrefOq0ki6LcwoAFV0ddHw9oMY7m4rzR/C1oGzmRrL00pXOS6tQRv5RRLJEbivneV1UPwxJplnWrAR0nRYdmwUQbEIM2ln7Kn4uaVOCfiJfVGmwVObmzjLpFjj+ukP2bDAchV1BQSoqBaFs1z9SspUMrwbK0Us/yJEgwEadkFuvBCZJyXZRab4T3lfSyVoDd2cxmjPTX7vSpsg5WZut5qeN2FHoih6qoXxNWN8UoIVsOlHC0gRuaOn082RvCXK3EmpmIgIzebBgV0+We1iIZ4rG2CXK8fOTHTOT6M+gt1Yg7HsoRuwl5ZAgMBAAEwDQYJKoZIhvcNAQELBQADggEBAKCltcEoPHF1o/Gfh/9P7ujAYndk4wzPvkPaZ58sNshVjAFapFOdldkEVe+t+keMGCcv5cxEtfEFfocTdyB/8g2iFtn74NIAxX1Kl1cWSH86M38N7k7+G2SMU98fQltPW77jBINiNTq3GM2WNzxydENWUwT4btqQW5jWvBPeZciyeWGYE9xYDi+Obp1niID6Xl8Q6XeIYcfcJPsMTMBFi0tv9iZSN2RHAHbGSMt4JiRkJdvUKUyfUlLyM4cEhMfAfDMW5EQI+ygTIfJdELLpIDCwFFPSy8FUVzrKQWUB87Cc6QFMoqDnq2bdWEHhTcJw+Axbcd71yCRRGLKMEE7fzLI=
+          </X509Certificate>
+        </X509Data>
+      </KeyInfo>
+    </KeyDescriptor>
+    <SingleLogoutService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" Location="https://wkis.qss.wko.at/adfs/ls/"/>
+    <SingleLogoutService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" Location="https://wkis.qss.wko.at/adfs/ls/"/>
+    <NameIDFormat>urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress</NameIDFormat>
+    <NameIDFormat>urn:oasis:names:tc:SAML:2.0:nameid-format:persistent</NameIDFormat>
+    <NameIDFormat>urn:oasis:names:tc:SAML:2.0:nameid-format:transient</NameIDFormat>
+    <SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" Location="https://wkis.qss.wko.at/adfs/ls/"/>
+    <SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" Location="https://wkis.qss.wko.at/adfs/ls/"/>
+  </IDPSSODescriptor>
+  <Organization>
+    <OrganizationName xml:lang="de-AT">WKO Inhouse GmbH</OrganizationName>
+    <OrganizationDisplayName xml:lang="de-AT">WKO Inhouse GmbH</OrganizationDisplayName>
+    <OrganizationURL xml:lang="de-AT">https://wko.at/</OrganizationURL>
+  </Organization>
+  <ContactPerson contactType="administrative">
+    <GivenName>Inhouse WKO IT Team SW Qualität &amp; Support</GivenName>
+    <SurName>WKO Inhouse GmbH</SurName>
+    <EmailAddress>mailto:QuS@inhouse.wko.at</EmailAddress>
+  </ContactPerson>
+  <ContactPerson contactType="technical">
+    <GivenName>Inhouse WKO IT Team SW Qualität &amp; Support</GivenName>
+    <SurName>WKO Inhouse GmbH</SurName>
+    <EmailAddress>mailto:QuS@inhouse.wko.at</EmailAddress>
+  </ContactPerson>
+  <ContactPerson contactType="support">
+    <GivenName>Inhouse WKO IT Team SW Qualität &amp; Support</GivenName>
+    <EmailAddress>mailto:QuS@inhouse.wko.at</EmailAddress>
+  </ContactPerson>
+</EntityDescriptor>
