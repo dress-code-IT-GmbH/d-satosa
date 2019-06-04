@@ -12,22 +12,23 @@ services:
     hostname: satosa
     networks:
       jenkins:
-    ports:
-       - "2022:2022"
+    #ports:
+       #- "8080:8080"
+       #- "2022:2022"
     restart: unless-stopped
     volumes:
-      - satosa.opt_etc_satosa:/opt/etc/satosa/:Z
-      - satosa.etc_ssh:/etc/ssh:Z
+      - satosa.opt_etc:/opt/etc:Z
       - satosa.var_log:/var/log:Z
+      #- satosa.etc_ssh:/etc/ssh:Z
 
 networks:
   jenkins:
     name: jenkins
 
 volumes:
-    satosa.opt_etc_satosa:
-      name: satosa.opt_etc_satosa
-    satosa.etc_ssh:
-      name: satosa.etc_ssh
+    satosa.opt_etc:
+      name: satosa.opt_etc
     satosa.var_log:
       name: satosa.var_log
+    #satosa.etc_ssh:
+    #  name: satosa.etc_ssh
