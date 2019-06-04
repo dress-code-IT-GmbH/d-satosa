@@ -37,7 +37,7 @@ ENV LC_ALL=en_US.utf-8
 RUN mkdir -p $HOME/.config/pip \
  && printf "[global]\ndisable-pip-version-check = True\n" > $HOME/.config/pip/pip.conf
 
-VOLUME $DATA_DIR
+VOLUME /opt/etc
 VOLUME /var/log/satosa
 CMD ["/opt/bin/start.sh"]
 ARG PROXY_PORT=8080
@@ -45,11 +45,11 @@ EXPOSE $PROXY_PORT
 
 # For development/debugging - map port in config and start sshd with /start_sshd.sh
 # delete keys to generate them on first container start, not in image
-RUN yum -y install openssh-server \
- && yum clean all
-RUN echo changeit | passwd -f --stdin root \
- && echo 'GSSAPIAuthentication no' >> /etc/ssh/sshd_config \
- && echo 'useDNS no' >> /etc/ssh/sshd_config \
- && rm -f /etc/ssh/ssh_host_*_key
-VOLUME /etc/sshd
-EXPOSE 2022
+#RUN yum -y install openssh-server \
+# && yum clean all
+#RUN echo changeit | passwd -f --stdin root \
+# && echo 'GSSAPIAuthentication no' >> /etc/ssh/sshd_config \
+# && echo 'useDNS no' >> /etc/ssh/sshd_config \
+# && rm -f /etc/ssh/ssh_host_*_key
+#VOLUME /etc/sshd
+#EXPOSE 2022
