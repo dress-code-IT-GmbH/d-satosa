@@ -17,6 +17,8 @@ RUN python3 -m venv /opt/venv \
  && /opt/venv/bin/pip install /src/satosa/[redirecturl]
 COPY SATOSA/docker/attributemaps /opt/satosa/attributemaps
 COPY SATOSA/docker/start.sh /opt/bin/start.sh
+# for debugging:
+RUN /opt/venv/bin/pip install autologging
 
 COPY install/bin /opt/bin
 COPY install/etc /opt/etc
