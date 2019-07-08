@@ -31,9 +31,9 @@ networks:
 volumes:
   rpmgr.export:
     name: rpmgr.export
-    satosa.opt_etc:
-      name: satosa.opt_etc
-    satosa.var_log:
-      name: satosa.var_log
-    #satosa.etc_ssh:
-    #  name: satosa.etc_ssh
+  satosa.opt_etc:
+    name: satosa.opt_etc
+  satosa.var_log:
+    name: satosa.var_log
+  #satosa.etc_ssh:
+  #  name: satosa.etc_ssh
