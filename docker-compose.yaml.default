@@ -18,15 +18,19 @@ services:
        #- "2022:2022"
     restart: unless-stopped
     volumes:
+      - rpmgr.export:/opt/satosa_rpmgr/export:z
       - satosa.opt_etc:/opt/etc:Z
       - satosa.var_log:/var/log:Z
       #- satosa.etc_ssh:/etc/ssh:Z
+
 
 networks:
   jenkins:
     name: jenkins
 
 volumes:
+  rpmgr.export:
+    name: rpmgr.export
     satosa.opt_etc:
       name: satosa.opt_etc
     satosa.var_log:
