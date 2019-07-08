@@ -1,29 +1,24 @@
 = Development Setup
 
-== Setup #1  local dev
+== Setup #1  local dev https://satosa.vnet/idp_proxy.xml
 
-local proxy has entityID in public metadata feed
-
-Run SATOSA in pycharm@puppetmaster:
-
-nginx@devl11:
+* Run SATOSA in pycharm@puppetmaster on 0.0.0.0:8016
+* map DNS of satosa.vnet to devl11
+* nginx@devl11 proxy satosa.vnet:443 nach puppetmaster:8000
+* use local CA (PVZDtest CA) (Documents/certs/IDN.local)
+* config nginx@devl11:
     server: https://satosa.vnet
-    proxypass: 10.37.129.2:8000
+    proxypass: 10.37.129.2:8016
 
-Certs: Documents/certs/IDN.local
+== Setup #2 "debug remote instance proxy2.test.wpv.portalverbund.at"
 
-== Setup #2 "debug remote"
-
-* change DNS of proxy2.test.wpv.portalverbund.at to devl11
-* run nginx on devl11 with vhost for proxy2.test.wpv.portalverbund.at
-  (proxies :443 to puppetmaster:8000)
+* map DNS of proxy2.test.wpv.portalverbund.at to devl11
+* nginx@devl11 proxy proxy2.test.wpv.portalverbund.at:443 nach puppetmaster:8000
 * use local CA (PVZDtest CA)
-
 
 == Tracing
 
 * remove LOGGING from proxy_conf.yaml
-* pip install autologging
 * add to classes and functions to be traced:
 
     from autologging import traced

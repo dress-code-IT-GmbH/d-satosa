@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<ns0:EntityDescriptor xmlns:ns0="urn:oasis:names:tc:SAML:2.0:metadata" 
+                      xmlns:ns1="http://www.w3.org/2000/09/xmldsig#" 
+                      xmlns:ns2="urn:oasis:names:tc:SAML:profiles:SSO:idp-discovery-protocol"
+                      xmlns:ns3="urn:oasis:names:tc:SAML:metadata:ui"
+                      xmlns:alg="urn:oasis:names:tc:SAML:metadata:algsupport"
+                      entityID="https://satosa.vnet/sp/proxy_backend.xml">
+  <!-- WKIS Redirect URL Endpunkt
+    https://satosa.vnet/redirecturl_response
+  -->
+  <ns0:SPSSODescriptor AuthnRequestsSigned="false" WantAssertionsSigned="true" protocolSupportEnumeration="urn:oasis:names:tc:SAML:2.0:protocol">
+    <ns0:Extensions>
+      <alg:DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"/>
+      <alg:SigningMethod MinKeySize="256" MaxKeySize="511" Algorithm="http://www.w3.org/2001/04/xmldsig-more#ecdsa-sha256"/>
+      <alg:SigningMethod MinKeySize="2048" MaxKeySize="4096" Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha256"/>
+      <ns2:DiscoveryResponse Binding="urn:oasis:names:tc:SAML:profiles:SSO:idp-discovery-protocol" Location="https://satosa.vnet/saml2/disco" index="1"/>
+      <ns3:UIInfo>
+        <ns3:DisplayName xml:lang="en">WPV Proxy SP Backend Dev</ns3:DisplayName>
+        <ns3:Description xml:lang="en">WPV Proxy SP Backend Entwicklung</ns3:Description>
+      </ns3:UIInfo>
+    </ns0:Extensions>
+    <ns0:KeyDescriptor use="signing">
+      <ns1:KeyInfo>
+        <ns1:X509Data>
+          <ns1:X509Certificate>MIIC9TCCAd2gAwIBAgIJAIpZ9dhuZnNSMA0GCSqGSIb3DQEBCwUAMBExDzANBgNV
+            BAMMBlNpZ25lcjAeFw0xOTA2MDUwNzI0MjhaFw0xOTA3MDUwNzI0MjhaMBExDzAN
+            BgNVBAMMBlNpZ25lcjCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAONh
+            0kvE/rDKfD8ySI4XnOF4jRgJ1J+e9q5/KlLtNoAWAqsTZIC+qgUCFLeTSiefCVOS
+            8/99jqUdvrz16fANa8gPXf+fZqdAKdcRBiKf5ZJcNJHgFFhjN6mZCpPI7mB1V71E
+            Lw/SLlnTw75soZWSu1cVjwdSKQcFwJR0aS6H7JC4QSiyNKkmFLDLO8TZdSfrSHH0
+            CUz41SlWpwE1DybMoUfi/c6gbtW8I1DwVuIpHwDthIQj2/07b8AXgBhXfw/qUBEU
+            3zr0tNHCudaSErnkLLw5kiod1doOQNd2TytU2Y/HjFVU3MQppLSb81rJYsbdn3bk
+            jR7EsK40wj+fwereLRsCAwEAAaNQME4wHQYDVR0OBBYEFDB4WhKqv94Zsewr2NFW
+            2g2/mNgvMB8GA1UdIwQYMBaAFDB4WhKqv94Zsewr2NFW2g2/mNgvMAwGA1UdEwQF
+            MAMBAf8wDQYJKoZIhvcNAQELBQADggEBAAokjKO4waan3uDMRLu+WXuWFPlakyLb
+            h3w1U8fFj8xg4pjg6yPFqo3AKNhkKqflumBPmakNV7YA6tV4LqbiMss6r7uxgbyu
+            nMJbgsmZTZWMsRqfHx9zr2XNXHi0FHfrUsldbXM7ehXUZ4UzjmWxKSOTq09asi3x
+            pE7NjKxkMqaTasyCZyt54yaTc1Rj37iFtvW1b57tf6vYLDcBsiAOW6aZg7Y7esLt
+            rMTIYlG8MRPUrKsVanDh7PlfmzJ2/Wq2HSoq9m0YJdEkf4G4qC1bBTctQKnKkRo8
+            IQrxUL6SWgoqJBJZXfNQFBNSjA3Wd62fNFX7y8+dHPpPXBqDZ71PLFE=
+          </ns1:X509Certificate>
+        </ns1:X509Data>
+      </ns1:KeyInfo>
+    </ns0:KeyDescriptor>
+    <ns0:NameIDFormat>urn:oasis:names:tc:SAML:2.0:nameid-format:transient</ns0:NameIDFormat>
+    <ns0:AssertionConsumerService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" Location="https://satosa.vnet/saml2/acs/post" index="1"/>
+    <ns0:AssertionConsumerService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" Location="https://satosa.vnet/saml2/acs/redirect" index="2"/>
+  </ns0:SPSSODescriptor>
+  <ns0:Organization>
+    <ns0:OrganizationName xml:lang="en">Austria Pro AK WPV</ns0:OrganizationName>
+    <ns0:OrganizationDisplayName xml:lang="en">Austria Pro AK WPV</ns0:OrganizationDisplayName>
+    <ns0:OrganizationURL xml:lang="en">http://www.wirtschaftsportalverbund.at</ns0:OrganizationURL>
+  </ns0:Organization>
+  <ns0:ContactPerson contactType="technical">
+    <ns0:GivenName>Rainer</ns0:GivenName>
+    <ns0:SurName>Hoerbe</ns0:SurName>
+    <ns0:EmailAddress>rh_testfed_pv_at@mail.hoerbe.at</ns0:EmailAddress>
+  </ns0:ContactPerson>
+</ns0:EntityDescriptor>

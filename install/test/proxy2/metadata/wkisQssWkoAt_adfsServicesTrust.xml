@@ -17,15 +17,6 @@
         <Description xml:lang="en">Qualitätssicherungumgebung der WKO</Description>
       </UIInfo>
     </Extensions>
-    <KeyDescriptor use="encryption">
-      <KeyInfo xmlns="http://www.w3.org/2000/09/xmldsig#">
-        <X509Data>
-          <X509Certificate>
-            MIIC4DCCAcigAwIBAgIQeGMjH+fjJa5CVnWhhBaD/TANBgkqhkiG9w0BAQsFADAsMSowKAYDVQQDEyFBREZTIEVuY3J5cHRpb24gLSB3a2lzLnFzcy53a28uYXQwHhcNMTgxMjE5MDc1MjM0WhcNMTkxMjE5MDc1MjM0WjAsMSowKAYDVQQDEyFBREZTIEVuY3J5cHRpb24gLSB3a2lzLnFzcy53a28uYXQwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQCwZAoAdMb9PWcRrKn6A1izYAEHxMQNc2LHWFHuOZNGBaQKK5OCAi8ju9rZc7oABFV56NGVbNu62DmThXgqfVnYHQ6dTImr7MdYvsj1FzF8zQnC8lrBuXks74V9rSNo7licVT56sSZraNhb2Dm3DlSqJ1bELhVbR3QV3TojzY38TRydT1HSi1c0JwvB274Hlva/+FZRxbzHvcLSsmDtxxA7LYVHA/AHnQn+ZgwMbsiKLEPxuIuBSmZCJas9Z0eSW5H6QVVbPTN9i7m1zekv5axQmBAm93RcwvZS4N/kDjW9Y9ntJ0ZcsUqaPq2mOetIiQse9hJJ2XW4YxqKoIs3bYHTAgMBAAEwDQYJKoZIhvcNAQELBQADggEBADLleNvoKzDn8qdRVW54jDxTi+1hCLUI7yfdxc6vb0YaHKVLf+mSdZCyScPIZ39fR+t1ikTgrQ/jJ4GRnCaB4gsq++iIS06SiTOAJYkvXd09+XN+990gM+PWslr8luvv8FBLGBoiiGRTy6mPHqym5veVzDiqvzoDNgNRJkH8ZOuR4GVqbly91fJTETZHbCdWA5V5TTL2n7fpe87A/ZQBGE9AeaQBmq1WnJbExIbShQjWF1PeMD4q76XGZuLXfRBLcoSbeGTVJEdlr0p2F/NfXGOT7HIww/9lZ9gioJOx3ox0Ar1bJ6PjoruvTEMWGqSmj8xk8MvnkPI//R4NEifF+lY=
-          </X509Certificate>
-        </X509Data>
-      </KeyInfo>
-    </KeyDescriptor>
     <KeyDescriptor use="signing">
       <KeyInfo xmlns="http://www.w3.org/2000/09/xmldsig#">
         <X509Data>
@@ -40,6 +31,16 @@
         <X509Data>
           <X509Certificate>
             MIIC2jCCAcKgAwIBAgIQc8Har4U7fIlF/0Sq6uVhZDANBgkqhkiG9w0BAQsFADApMScwJQYDVQQDEx5BREZTIFNpZ25pbmcgLSB3a2lzLnFzcy53a28uYXQwHhcNMTgxMjE5MDc1MjA5WhcNMTkxMjE5MDc1MjA5WjApMScwJQYDVQQDEx5BREZTIFNpZ25pbmcgLSB3a2lzLnFzcy53a28uYXQwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQCwcio8bHEY2g7qd50pFXcPPMl21pLpn7bVrefOq0ki6LcwoAFV0ddHw9oMY7m4rzR/C1oGzmRrL00pXOS6tQRv5RRLJEbivneV1UPwxJplnWrAR0nRYdmwUQbEIM2ln7Kn4uaVOCfiJfVGmwVObmzjLpFjj+ukP2bDAchV1BQSoqBaFs1z9SspUMrwbK0Us/yJEgwEadkFuvBCZJyXZRab4T3lfSyVoDd2cxmjPTX7vSpsg5WZut5qeN2FHoih6qoXxNWN8UoIVsOlHC0gRuaOn082RvCXK3EmpmIgIzebBgV0+We1iIZ4rG2CXK8fOTHTOT6M+gt1Yg7HsoRuwl5ZAgMBAAEwDQYJKoZIhvcNAQELBQADggEBAKCltcEoPHF1o/Gfh/9P7ujAYndk4wzPvkPaZ58sNshVjAFapFOdldkEVe+t+keMGCcv5cxEtfEFfocTdyB/8g2iFtn74NIAxX1Kl1cWSH86M38N7k7+G2SMU98fQltPW77jBINiNTq3GM2WNzxydENWUwT4btqQW5jWvBPeZciyeWGYE9xYDi+Obp1niID6Xl8Q6XeIYcfcJPsMTMBFi0tv9iZSN2RHAHbGSMt4JiRkJdvUKUyfUlLyM4cEhMfAfDMW5EQI+ygTIfJdELLpIDCwFFPSy8FUVzrKQWUB87Cc6QFMoqDnq2bdWEHhTcJw+Axbcd71yCRRGLKMEE7fzLI=
+          </X509Certificate>
+        </X509Data>
+      </KeyInfo>
+    </KeyDescriptor>
+    <KeyDescriptor use="signing">
+      <!-- 2019-06-05  -->
+      <KeyInfo xmlns="http://www.w3.org/2000/09/xmldsig#">
+        <X509Data>
+          <X509Certificate>
+            MIICIzCCAYwCAXcwDQYJKoZIhvcNAQELBQAwWjELMAkGA1UEBhMCc2UxCzAJBgNV BAgTAmFjMQ0wCwYDVQQHEwRVbWVhMQwwCgYDVQQKEwNJVFMxDTALBgNVBAsTBERJ UkcxEjAQBgNVBAMTCWxvY2FsaG9zdDAeFw0xNDAzMTkxNzE5MzlaFw0yNDAzMTYx NzE5MzlaMFoxCzAJBgNVBAYTAnNlMQswCQYDVQQIEwJhYzENMAsGA1UEBxMEVW1l YTEMMAoGA1UEChMDSVRTMQ0wCwYDVQQLEwRESVJHMRIwEAYDVQQDEwlsb2NhbGhv c3QwgZ8wDQYJKoZIhvcNAQEBBQADgY0AMIGJAoGBALswQbMz6dKL4FEKu+O3GYDf aniyxcfizsHaiehuh5jufrlGZw/zMMttteTRhpjtTFN2/R68d1kh8pmO+HV7u+53 h+C33I178ZsOquSovGe1AWmzDzp2j6CRdQYdZaMCc4YxtwEXs7570YmnPLKhz8aH diQRHhtx1cqdPPStkz67AgMBAAEwDQYJKoZIhvcNAQELBQADgYEApQ5znEdhsJBs +ew81X9pkUKZ/ruu/p2OPfYmKzdFnK6mq9bF5CEIaIkvbSJjpECicmGCNw9ATJXy lnwFLnfxw6d+YGi4XPuo64NSG00ycnMSTMJ8OR5ForcF89v72BLRDYo6yXeNDw72 2ul0lPzH54CNQzsm4N/5w5iStnOT1TQ=
           </X509Certificate>
         </X509Data>
       </KeyInfo>

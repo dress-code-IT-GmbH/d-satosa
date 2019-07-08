@@ -1,5 +1,6 @@
 #--- SATOSA Config ---#
-BASE: https://proxy2.test.wpv.portalverbund.at
+#BASE: https://proxy2.test.wpv.portalverbund.at
+BASE: https://satosa.vnet
 INTERNAL_ATTRIBUTES: "internal_attributes.yaml"
 COOKIE_STATE_NAME: "SATOSA_STATE"
 STATE_ENCRYPTION_KEY: "WQpuhOELqGAs/ct2mujCqw"
@@ -44,3 +45,21 @@ TRACING: true
 #  root:
 #    level: TRACE
 #    handlers: [info_file_handler]
+
+# configuration options: see satosa_log_filter.py
+SUCCINCT_LOG_SATOSA:
+    'attribute_converter:list_to_local': 120
+    'state:cookie_to_state': 120
+    'state:state_to_cookie': 120
+    'satosa.proxy_server:unpack_request': 120
+    'satosa.proxy_server:unpack_post:unpack_post': 120
+    'satosa.state:satosa_logging:': 120
+    'satosa.frontends.saml2:satosa_logging': 120
+    'saml2:authn_request': 120
+    'saml2:_handle_authn_request': 120
+    'saml2:_handle_authn_response': 120
+    'saml2:_get_approved_attributes': 120
+    'saml2:_translate_response': 120
+    'proxy_server:unpack_get': 120
+    'proxy_server:unpack_post': 120
+    'proxy_server:unpack_request': 120
