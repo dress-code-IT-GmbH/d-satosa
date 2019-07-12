@@ -1,5 +1,10 @@
 config:
   rules:
+    http://wkis.qss.wko.at/adfs/services/trust:
+      allow:
+        - https://sp1.test.wpv.portalverbund.at/sp.xml
+        - https://sp3.test.wpv.portalverbund.at/sp.xml
+        - https://sp4.test.wpv.portalverbund.at/sp.xml
     https://idp1.test.wpv.portalverbund.at/idp/shibboleth:
       allow:
         - https://sp1.test.wpv.portalverbund.at/sp.xml
