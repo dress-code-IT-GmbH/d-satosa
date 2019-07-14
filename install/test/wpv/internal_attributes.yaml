@@ -54,4 +54,4 @@ attributes:
   wbpkHash:
     saml: [wbpkHash]
   RedirectUrl:
-    saml: [wkisRedirect]
+    saml: [wkis_redirect]

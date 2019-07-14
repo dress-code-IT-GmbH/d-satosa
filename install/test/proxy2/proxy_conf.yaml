@@ -15,8 +15,8 @@ FRONTEND_MODULES:
 MICRO_SERVICES:
   - "plugins/microservices/static_attributes.yaml"
   - "plugins/microservices/custom_routing_DecideIfRequesterIsAllowed.yaml"
-  #- "plugins/microservices/redirect_url_request.yaml"
-  #- "plugins/microservices/redirect_url_response.yaml"
+  - "plugins/microservices/redirect_url_request.yaml"
+  - "plugins/microservices/redirect_url_response.yaml"
 TRACING: true
 #LOGGING:
 #  version: 1
