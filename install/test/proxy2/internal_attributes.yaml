@@ -2,27 +2,27 @@ attributes:
 #  address:
 #    saml: [postaladdress]
 #  addr_country:
-#    saml: [country]
+#    saml: [c, country]
   authenticationClass:
     saml: [authenticationClass]
   displayname:
-    saml: [displayName]
+    saml: [displayName, imi_displayname]
   gender:
-    saml: [gender]
+    saml: [gender, Gender, imi_gender]
   gln:
     saml: [gln]
   givenname:
-    saml: [givenName]
+    saml: [givenName, imi_givenName]
   mail:
-    saml: [email, emailAdress, mail]
+    saml: [mail, emailAdress, email, imi_emailaddress]
   name:
     saml: [cn, commonName]
   organizationName:
     saml: [organizationName]
   orgSourcePin:
     saml: [orgSourcePin]
-  PossibleRoles:
-    saml: [PossibleRoles]
+  possibleroles:
+    saml: [wkis_possiblerole]
   rights:
     saml: [rights]
   registrationClassOrg:
@@ -30,24 +30,18 @@ attributes:
   registrationClassUser:
     saml: [registrationClassUser]
   surname:
-    saml: [sn, surname]
- # targetedid:
- #   facebook: [id]
- #   linkedin: [id]
- #   github: [id]
- #   openid: [sub]
+    saml: [sn, surname, imi_surname]
   gid:
     saml: [gid]
-#  telephoneNumber:
-#    saml: telephoneNumber
 #  title:
 #    saml: [title]
   uid:
-    saml: [uid]
-#  wbpkHash:
-#    saml: [wbpkHash]
-  WkisRedirect:
-    saml: [WkisRedirect]
-
-#user_id_from_attrs: [targetedid]
-#user_id_to_attr: targetedid
+    saml: [uid, imi_upn]
+  wkis_redirect:
+    saml: [wkis_redirect]
+  wkis_roledescription:
+    saml: [wkis_roledescription]
+  wkis_roleextendeddescription:
+    saml: [wkis_roleextendeddescription]
+  wkis_roletypeid:
+    saml: [wkis_roletypeid]

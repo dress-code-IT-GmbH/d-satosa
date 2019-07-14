@@ -11,6 +11,7 @@ PKCS_9 = 'urn:oid:1.2.840.113549.1.9.1.'
 SCHAC = 'urn:oid:1.3.6.1.4.1.25178.1.2.'
 SIS = 'urn:oid:1.2.752.194.10.2.'
 UMICH = 'urn:oid:1.3.6.1.4.1.250.1.57.'
+XMLSOAP_IMI = 'http://schemas.xmlsoap.org/ws/2005/05/identity/claims/'
 
 # openosi-0.82.schema http://www.openosi.org/osi/display/ldap/Home
 OPENOSI_OID = 'urn:oid:1.3.6.1.4.1.27630.2.1.1.'
@@ -25,6 +26,7 @@ MAP = {
         SCHAC+'2': 'gender',
         UCL_DIR_PILOT+'1': 'uid',
         UCL_DIR_PILOT+'3': 'mail',
+        LDAPGVAT_OID+'261.100': 'orgSourcePin',
         X500ATTR_OID+'3': 'cn',
         X500ATTR_OID+'4': 'sn',
         X500ATTR_OID+'6': 'c',
@@ -39,13 +41,26 @@ MAP = {
         X500ATTR_OID+'18': 'postOfficeBox',
         X500ATTR_OID+'20': 'telephoneNumber',
         X500ATTR_OID+'42': 'givenName',
-        'http://schemas.wko.at/ws/2014/02/identity/claims/redirect': 'wkisRedirect',
         'urn:oid:1.3.88': 'gln',
+        XMLSOAP_IMI+'givenname': 'imi_givenName',
+        XMLSOAP_IMI+'surname': 'imi_surname',
+        XMLSOAP_IMI+'emailaddress': 'imi_emailaddress',
+        XMLSOAP_IMI+'gender': 'imi_gender',
+        XMLSOAP_IMI+'dateofbirth': 'imi_dateofbirth',
+        XMLSOAP_IMI+'displayname': 'imi_displayname',
+        XMLSOAP_IMI+'name': 'imi_uniquename',
+        XMLSOAP_IMI+'upn': 'imi_upn',
+        'http://schemas.xmlsoap.org/claims/CommonName': 'imi_commonName',
         'http://wirtschaftsportalverbund.at/ns/identity/claims/2016/04/authenticationClass': 'authenticationClass',
         'http://wirtschaftsportalverbund.at/ns/identity/claims/2016/04/registrationClassOrg': 'registrationClassOrg',
         'http://wirtschaftsportalverbund.at/ns/identity/claims/2016/04/registrationClassUser': 'registrationClassUser',
-        'http://schemas.wko.at/ws/2014/06/identity/claims/possiblerole': 'PossibleRoles',
-        '1.2.40.0.10.2.1.1.261.100': 'orgSourcePin',
+        'http://schemas.wko.at/ws/2011/12/identity/claims/adobjectguidbase64': 'wkis_gid',
+        'http://schemas.wko.at/ws/2014/06/identity/claims/possiblerole': 'wkis_possiblerole',
+        'http://schemas.wko.at/ws/2014/02/identity/claims/redirect': 'wkis_redirect',
+        'http://schemas.wko.at/ws/2014/02/identity/claims/roledescription': 'wkis_roledescription',
+        'http://schemas.wko.at/ws/2014/02/identity/claims/roleextendeddescription': 'wkis_roleextendeddescription',
+        'http://schemas.wko.at/ws/2014/02/identity/claims/roletypeid': 'wkis_roletypeid',
+        'http://schemas.wko.at/ws/2013/11/identity/claims/title': 'wkis_title',
     },
     'to': {
         'c': X500ATTR_OID+'6',
@@ -71,13 +86,26 @@ MAP = {
         'telephoneNumber': X500ATTR_OID+'20',
         'title': X500ATTR_OID+'12',
         'uid': UCL_DIR_PILOT+'1',
-        'wkisRedirect': 'http://schemas.wko.at/ws/2014/02/identity/claims/redirect',
         'gln': 'urn:oid:1.3.88',
+        'orgSourcePin': LDAPGVAT_OID+'261.100',
+        'imi_givenName': XMLSOAP_IMI + 'givenname',
+        'imi_surname': XMLSOAP_IMI + 'surname',
+        'imi_emailaddress': XMLSOAP_IMI + 'emailaddress',
+        'imi_gender': XMLSOAP_IMI + 'gender',
+        'imi_dateofbirth': XMLSOAP_IMI + 'dateofbirth',
+        'imi_displayname': XMLSOAP_IMI + 'name',
+        'imi_uniquename': XMLSOAP_IMI + 'name',
+        'imi_upn': XMLSOAP_IMI + 'upn',
         'authenticationClass': 'http://wirtschaftsportalverbund.at/ns/identity/claims/2016/04/authenticationClass',
         'registrationClassOrg': 'http://wirtschaftsportalverbund.at/ns/identity/claims/2016/04/registrationClassOrg',
         'registrationClassUser': 'http://wirtschaftsportalverbund.at/ns/identity/claims/2016/04/registrationClassUser',
-        'PossibleRoles': 'http://schemas.wko.at/ws/2014/06/identity/claims/possiblerole',
-        'orgSourcePin': '1.2.40.0.10.2.1.1.261.100',
+        'wkis_gid': 'http://schemas.wko.at/ws/2011/12/identity/claims/adobjectguidbase64',
+        'wkis_redirect': 'http://schemas.wko.at/ws/2014/02/identity/claims/redirect',
+        'wkis_possiblerole': 'http://schemas.wko.at/ws/2014/06/identity/claims/possiblerole',
+        'wkis_roledescription': 'http://schemas.wko.at/ws/2014/02/identity/claims/roledescription',
+        'wkis_roleextendeddescription': 'http://schemas.wko.at/ws/2014/02/identity/claims/roleextendeddescription',
+        'wkis_roletypeid': 'http://schemas.wko.at/ws/2014/02/identity/claims/roletypeid',
+        'wkis_title': 'http://schemas.wko.at/ws/2013/11/identity/claims/title',
     }
 }
 
