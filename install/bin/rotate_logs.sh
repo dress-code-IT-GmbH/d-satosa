@@ -5,7 +5,7 @@ while getopts ':fv' opt; do
     f) force_opt='-f';;
     v) verbose_opt='-v';;
     *) echo "usage: $0 OPTIONS
-       Configure apache + shibd and generate SP metadata
+       rotate log files
 
        OPTIONS:
        -f  force
@@ -17,8 +17,6 @@ shift $((OPTIND-1))
 
 
 mkdir -p /var/log/logrotate
-mkdir -p /var/log/nginx/history
-mkdir -p /var/log/sigproxy/history
-mkdir -p /var/log/webapp/history
+mkdir -p /var/log/satosa/history
 
-logrotate $verbose_opt --state /var/log/logrotate/logrotate.status /opt/etc/logrotate/logrotate.conf
+logrotate $verbose_opt $force_opt --state /var/log/logrotate/logrotate.status /opt/etc/logrotate/logrotate.conf
