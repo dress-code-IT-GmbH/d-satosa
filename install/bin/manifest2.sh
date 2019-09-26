@@ -7,8 +7,6 @@ main() {
     _get_system_python_packages                 #  requires pip
     _get_directorytree_checksum /src/satosa     #  requires sha256sum
     _get_directorytree_checksum /opt/bin        #  requires sha256sum
-    _get_singlefile_checksum     /setup.sh      #  requires sha256sum
-    _get_singlefile_checksum     /start.sh      #  requires sha256sum
 }
 
 
