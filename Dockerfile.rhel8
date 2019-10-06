@@ -2,7 +2,7 @@ FROM intra/ubi8-py36
 
 USER root
 RUN dnf -y update \
- && dnf -y install logrotate net-tools sudo \
+ && dnf -y install iputils logrotate net-tools sudo \
  && dnf -y install xmlsec1 xmlsec1-openssl \
  && dnf clean all
 

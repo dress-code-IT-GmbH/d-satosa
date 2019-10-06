@@ -1,0 +1,8 @@
+module: satosa.micro_services.simpleconsent.SimpleConsent
+name: SimpleConsent
+config:
+  verify_consent_url: https://consent.wko.at/has_consent
+  id_hash_alg: md5  # md5 is shorter than sha-224, but may be missing in (rare) FIPS-compliant C-Python
+  request_consent_url: https://consent.wko.at/request_consent
+  self_entityid: satosa.vnet/idp_proxy.xml
+
