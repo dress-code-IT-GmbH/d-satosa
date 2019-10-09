@@ -17,6 +17,7 @@ MICRO_SERVICES:
   - "plugins/microservices/custom_routing_DecideIfRequesterIsAllowed.yaml"
   - "plugins/microservices/redirect_url_request.yaml"
   - "plugins/microservices/redirect_url_response.yaml"
+  - "plugins/microservices/simpleconsent.yaml"
 TRACING: true
 #LOGGING:
 #  version: 1

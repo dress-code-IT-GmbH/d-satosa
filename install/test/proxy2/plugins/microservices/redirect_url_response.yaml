@@ -6,4 +6,4 @@ config:
   redirect_attr_name: wkis_redirect
   redir_entityid: http://wkis.qss.wko.at/adfs/services/trust
   #self_entityid: proxy2.test.wpv.portalverbund.at/idp_proxy.xml
-  self_entityid: satosa.vnet/idp_proxy.xml
+  self_entityid: https://satosa.vnet/sp/proxy_backend.xml
