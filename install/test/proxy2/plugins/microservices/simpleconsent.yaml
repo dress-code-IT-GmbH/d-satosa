@@ -1,3 +1,5 @@
+# this file contains secret keys. Protect file or insert values from environment
+
 module: satosa.micro_services.simpleconsent.SimpleConsent
 name: SimpleConsent
 config:
@@ -18,12 +20,13 @@ config:
     mail: E-Mailadresse
     name: Vor+Familienname
     surname: Familienname
-    wkis_roledescription: "WKO-Rolle des Mitlgieds"
+    wkis_roledescription: "WKO-Rolle des Mitglieds"
   consent_service_api_auth:
     userid: admin
     password: adminadmin
-    realm: apiuser
   id_hash_alg: md5  # md5 is shorter than sha-224, but may be missing in (rare) FIPS-compliant C-Python
+  # shard secret: configure same ASCII-value in proxy and consent app
+  PROXY_HMAC_KEY: "leMn00UscEDWEtt/vvHs0v/+Wqjxih/WxixZOMLt"
   #request_consent_url: https://consent.wko.at/request_consent
   #request_consent_url: https://wpvconsent.vnet/request_consent
   request_consent_url: http://localhost:8017/request_consent
@@ -31,7 +34,7 @@ config:
   # consent display page: translate SP entityIDs to human readable names
   # (work around, as metadata is not available in the micro service)
   sp_entityid_names:
-    https://sp1.test.wpv.portalverbund.at/sp.xml: Test SP1
+    https://sp1.test.wpv.portalverbund.at/sp.xml: "Test SP1"
   #verify_consent_url: https://consent.wko.at/has_consent
   #verify_consent_url: https://wpvconsent.vnet/has_consent
   verify_consent_url: http://localhost:8017/has_consent
