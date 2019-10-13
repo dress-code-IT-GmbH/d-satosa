@@ -1,0 +1,147 @@
+--- 
+
++++ 
+
+@@ -1,5 +1,5 @@
+
+-REPO::identinetics/d-satosa/==#5aec62b
+
+-REPO::rhoerbe/SATOSA/==#3e6322d
+
++REPO::identinetics/d-satosa/==#a245ef4
+
++REPO::rhoerbe/SATOSA/==#ed6b9c1
+
+ REPO::identinetics/dcshell/==#9ceffa8
+
+ FROM::intra/ubi8-py36==2fc648970d87
+
+ PYTHON::virtualenv==16.7.5
+
+@@ -65,6 +65,7 @@
+
+ FILE::/src/satosa/example/plugins/microservices/redirect_url_request.yaml.example==#bfd7303
+
+ FILE::/src/satosa/example/plugins/microservices/redirect_url_response.yaml.example==#e7ecc0a
+
+ FILE::/src/satosa/example/plugins/microservices/requester_based_routing.yaml.example==#3bd17d6
+
++FILE::/src/satosa/example/plugins/microservices/simpleconsent.yaml.example==#bcae03b
+
+ FILE::/src/satosa/example/plugins/microservices/static_attributes.yaml.example==#bd91c60
+
+ FILE::/src/satosa/example/proxy_conf.yaml.example==#0d834b3
+
+ FILE::/src/satosa/issue_template.md==#dc346ca
+
+@@ -107,11 +108,12 @@
+
+ FILE::/src/satosa/src/satosa/micro_services/attribute_modifications.py==#1125f70
+
+ FILE::/src/satosa/src/satosa/micro_services/attribute_processor.py==#b7dc099
+
+ FILE::/src/satosa/src/satosa/micro_services/base.py==#2400227
+
+-FILE::/src/satosa/src/satosa/micro_services/consent.py==#683e8fb
+
++FILE::/src/satosa/src/satosa/micro_services/consent.py==#3971449
+
+ FILE::/src/satosa/src/satosa/micro_services/custom_logging.py==#1df3294
+
+ FILE::/src/satosa/src/satosa/micro_services/custom_routing.py==#cec6740
+
+ FILE::/src/satosa/src/satosa/micro_services/hasher.py==#e35e140
+
+ FILE::/src/satosa/src/satosa/micro_services/ldap_attribute_store.py==#72189c5
+
++FILE::/src/satosa/src/satosa/micro_services/local_store.py==#f1e1150
+
+ FILE::/src/satosa/src/satosa/micro_services/primary_identifier.py==#2b956b5
+
+ FILE::/src/satosa/src/satosa/micro_services/processors/__init__.py==#e3b0c44
+
+ FILE::/src/satosa/src/satosa/micro_services/processors/base_processor.py==#82c789d
+
+@@ -120,7 +122,8 @@
+
+ FILE::/src/satosa/src/satosa/micro_services/processors/scope_extractor_processor.py==#ea85418
+
+ FILE::/src/satosa/src/satosa/micro_services/processors/scope_processor.py==#92fb046
+
+ FILE::/src/satosa/src/satosa/micro_services/processors/scope_remover_processor.py==#6e2c82f
+
+-FILE::/src/satosa/src/satosa/micro_services/redirect_url.py==#6252b3c
+
++FILE::/src/satosa/src/satosa/micro_services/redirect_url.py==#36f2321
+
++FILE::/src/satosa/src/satosa/micro_services/simpleconsent.py==#2c90fbe
+
+ FILE::/src/satosa/src/satosa/plugin_loader.py==#fda91b9
+
+ FILE::/src/satosa/src/satosa/proxy_server.py==#ddaabe9
+
+ FILE::/src/satosa/src/satosa/response.py==#33b872a
+
+@@ -244,6 +247,7 @@
+
+ FILE::/src/satosa/example/plugins/microservices/redirect_url_request.yaml.example==#bfd7303
+
+ FILE::/src/satosa/example/plugins/microservices/redirect_url_response.yaml.example==#e7ecc0a
+
+ FILE::/src/satosa/example/plugins/microservices/requester_based_routing.yaml.example==#3bd17d6
+
++FILE::/src/satosa/example/plugins/microservices/simpleconsent.yaml.example==#bcae03b
+
+ FILE::/src/satosa/example/plugins/microservices/static_attributes.yaml.example==#bd91c60
+
+ FILE::/src/satosa/example/proxy_conf.yaml.example==#0d834b3
+
+ FILE::/src/satosa/issue_template.md==#dc346ca
+
+@@ -286,11 +290,12 @@
+
+ FILE::/src/satosa/src/satosa/micro_services/attribute_modifications.py==#1125f70
+
+ FILE::/src/satosa/src/satosa/micro_services/attribute_processor.py==#b7dc099
+
+ FILE::/src/satosa/src/satosa/micro_services/base.py==#2400227
+
+-FILE::/src/satosa/src/satosa/micro_services/consent.py==#683e8fb
+
++FILE::/src/satosa/src/satosa/micro_services/consent.py==#3971449
+
+ FILE::/src/satosa/src/satosa/micro_services/custom_logging.py==#1df3294
+
+ FILE::/src/satosa/src/satosa/micro_services/custom_routing.py==#cec6740
+
+ FILE::/src/satosa/src/satosa/micro_services/hasher.py==#e35e140
+
+ FILE::/src/satosa/src/satosa/micro_services/ldap_attribute_store.py==#72189c5
+
++FILE::/src/satosa/src/satosa/micro_services/local_store.py==#f1e1150
+
+ FILE::/src/satosa/src/satosa/micro_services/primary_identifier.py==#2b956b5
+
+ FILE::/src/satosa/src/satosa/micro_services/processors/__init__.py==#e3b0c44
+
+ FILE::/src/satosa/src/satosa/micro_services/processors/base_processor.py==#82c789d
+
+@@ -299,7 +304,8 @@
+
+ FILE::/src/satosa/src/satosa/micro_services/processors/scope_extractor_processor.py==#ea85418
+
+ FILE::/src/satosa/src/satosa/micro_services/processors/scope_processor.py==#92fb046
+
+ FILE::/src/satosa/src/satosa/micro_services/processors/scope_remover_processor.py==#6e2c82f
+
+-FILE::/src/satosa/src/satosa/micro_services/redirect_url.py==#6252b3c
+
++FILE::/src/satosa/src/satosa/micro_services/redirect_url.py==#36f2321
+
++FILE::/src/satosa/src/satosa/micro_services/simpleconsent.py==#2c90fbe
+
+ FILE::/src/satosa/src/satosa/plugin_loader.py==#fda91b9
+
+ FILE::/src/satosa/src/satosa/proxy_server.py==#ddaabe9
+
+ FILE::/src/satosa/src/satosa/response.py==#33b872a
