@@ -1,0 +1,9 @@
+rebasing SATOSA.wkis.deploy to upstream-master
+
+checkout master -> rh_wkis3
+add  **kwargs to endpoints in frontend/backend/microservices to be compatible with extension in redirecturl.py
+add `return spec(context, wsgi_app=self)` to _run_bound_endpoint() in base.py
+
+in backend/saml2.py: in authn_response() add check if relay_state exists
+
+TODO: make custom_routing work with 1 IDP

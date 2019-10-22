@@ -30,6 +30,9 @@ RUN chmod -R +x /opt/bin/* \
  && mkdir -p $DATA_DIR/attributemaps /var/log/satosa /var/run/satosa \
  && chown -R satosa:satosa $DATA_DIR /opt/test /var/log/satosa /var/run/satosa
 
+# if SATOSA still puts the venv into /opt/satosa ..
+# RUN mv /opt/satosa /opt/venv || true
+
 # satosa-saml-metadata requires valid UTF setting:
 ENV LANG=en_US.utf-8
 ENV LC_ALL=en_US.utf-8
