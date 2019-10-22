@@ -8,16 +8,16 @@ RUN dnf -y update \
 
 COPY SATOSA /src/satosa
 RUN python -m pip install virtualenv \
- && mkdir -p /opt/venv \
- && virtualenv /opt/venv \
- && echo 'source /opt/venv/bin/activate' > /etc/profile.d/pyenv.sh \
+ && mkdir -p /opt/satosa \
+ && virtualenv /opt/satosa \
+ && echo 'source /opt/satosa/bin/activate' > /etc/profile.d/pyenv.sh \
  && source /etc/profile.d/pyenv.sh \
  && sync \
- && /opt/venv/bin/pip install /src/satosa/[redirecturl]
-COPY SATOSA/docker/attributemaps /opt/satosa/attributemaps
+ && /opt/satosa/bin/pip install /src/satosa/[redirecturl]
+COPY SATOSA/docker/attributemaps /opt/etc/satosa/attributemaps
 COPY SATOSA/docker/start.sh /opt/bin/start.sh
 # for debugging:
-RUN /opt/venv/bin/pip install autologging
+RUN /opt/satosa/bin/pip install autologging
 
 COPY install/bin /opt/bin
 COPY install/etc /opt/etc
@@ -27,11 +27,9 @@ ENV DATA_DIR=/opt/etc/satosa
 ENV METADATA_DIR=$DATA_DIR/metadata
 RUN chmod -R +x /opt/bin/* \
  && adduser --user-group satosa \
- && mkdir -p $DATA_DIR/attributemaps /var/log/satosa /var/run/satosa \
+ && mkdir -p /var/log/satosa /var/run/satosa \
  && chown -R satosa:satosa $DATA_DIR /opt/test /var/log/satosa /var/run/satosa
 
-# if SATOSA still puts the venv into /opt/satosa ..
-# RUN mv /opt/satosa /opt/venv || true
 
 # satosa-saml-metadata requires valid UTF setting:
 ENV LANG=en_US.utf-8
