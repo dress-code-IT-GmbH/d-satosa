@@ -13,6 +13,7 @@ RUN python -m pip install virtualenv \
  && echo 'source /opt/satosa/bin/activate' > /etc/profile.d/pyenv.sh \
  && source /etc/profile.d/pyenv.sh \
  && sync \
+ && /opt/satosa/bin/pip install redis \
  && /opt/satosa/bin/pip install /src/satosa/[redirecturl]
 COPY SATOSA/docker/attributemaps /opt/etc/satosa/attributemaps
 COPY SATOSA/docker/start.sh /opt/bin/start.sh
