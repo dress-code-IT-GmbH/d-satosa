@@ -14,7 +14,7 @@ FRONTEND_MODULES:
   - "plugins/frontends/saml2_frontend.yaml"
 MICRO_SERVICES:
   - "plugins/microservices/static_attributes.yaml"
-  #- "plugins/microservices/custom_routing_DecideIfRequesterIsAllowed.yaml"
+  - "plugins/microservices/filter_requester.yaml"
   - "plugins/microservices/redirect_url_request.yaml"
   - "plugins/microservices/redirect_url_response.yaml"
   - "plugins/microservices/simpleconsent.yaml"
