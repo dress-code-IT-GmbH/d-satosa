@@ -17,8 +17,8 @@ attributes:
     saml: [mail, emailAdress, email, imi_emailaddress]
   name:
     saml: [cn, commonName]
-  organizationName:
-    saml: [organizationName]
+  o:
+    saml: [o, organizationName]
   orgSourcePin:
     saml: [orgSourcePin]
   possibleroles:
