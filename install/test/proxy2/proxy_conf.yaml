@@ -4,10 +4,6 @@ BASE: https://satosa.vnet
 INTERNAL_ATTRIBUTES: "internal_attributes.yaml"
 COOKIE_STATE_NAME: "SATOSA_STATE"
 STATE_ENCRYPTION_KEY: "WQpuhOELqGAs/ct2mujCqw"
-CUSTOM_PLUGIN_MODULE_PATHS:
-  - "plugins/backends"
-  - "plugins/frontends"
-  - "plugins/micro_services"
 BACKEND_MODULES:
   - "plugins/backends/saml2_backend.yaml"
 FRONTEND_MODULES:

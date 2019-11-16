@@ -27,7 +27,9 @@ config:
             - lang: en
               text: "WPV Proxy SP Backend"
         authn_requests_signed: false
-        want_response_signed: false   # WKIS signs assertions, not responses -> clarify
+        want_response_signed: false
+        want_assertions_signed: false
+        want_assertions_or_response_signed: true   # WKIS signs assertions, not responses
         allow_unsolicited: true
         endpoints:
           assertion_consumer_service:
