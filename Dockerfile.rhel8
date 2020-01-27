@@ -1,24 +1,25 @@
 FROM intra/ubi8-py36
 
 USER root
+RUN echo "proxy=http://urlgw.oe.wknet:8080/" >> /etc/dnf/dnf.conf
 RUN dnf -y update \
  && dnf -y install iputils logrotate net-tools sudo \
  && dnf -y install xmlsec1 xmlsec1-openssl \
  && dnf clean all
 
 COPY SATOSA /src/satosa
-RUN python -m pip install virtualenv \
+RUN python -m pip --proxy http://urlgw.oe.wknet:8080 install virtualenv \
  && mkdir -p /opt/satosa \
  && virtualenv /opt/satosa \
  && echo 'source /opt/satosa/bin/activate' > /etc/profile.d/pyenv.sh \
  && source /etc/profile.d/pyenv.sh \
  && sync \
- && /opt/satosa/bin/pip install redis \
- && /opt/satosa/bin/pip install /src/satosa/[redirecturl]
+ && /opt/satosa/bin/pip --proxy http://urlgw.oe.wknet:8080 install redis \
+ && /opt/satosa/bin/pip --proxy http://urlgw.oe.wknet:8080 install /src/satosa/[redirecturl]
 COPY SATOSA/docker/attributemaps /opt/etc/satosa/attributemaps
 COPY SATOSA/docker/start.sh /opt/bin/start.sh
 # for debugging:
-RUN /opt/satosa/bin/pip install autologging
+RUN /opt/satosa/bin/pip --proxy http://urlgw.oe.wknet:8080 install autologging
 
 COPY install/bin /opt/bin
 COPY install/etc /opt/etc
