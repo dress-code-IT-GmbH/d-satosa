@@ -3,7 +3,7 @@ services:
   satosa:
     build:
       context: .
-      dockerfile: Dockerfile.rhel8
+      dockerfile: Dockerfile
     container_name: satosa
     image: r2h2/satosa
     environment:
