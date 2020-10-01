@@ -23,13 +23,12 @@ RUN /opt/venv/bin/pip install autologging
 COPY install/bin /opt/bin
 COPY install/etc /opt/etc
 ENV GUNICORN_CONF=/opt/etc/gunicorn/config.py
-COPY install/test /opt/test
 ENV DATA_DIR=/opt/etc/satosa
 ENV METADATA_DIR=$DATA_DIR/metadata
 RUN chmod -R +x /opt/bin/* \
  && adduser --user-group satosa \
  && mkdir -p $DATA_DIR/attributemaps /var/log/satosa /var/run/satosa \
- && chown -R satosa:satosa $DATA_DIR /opt/test /var/log/satosa /var/run/satosa
+ && chown -R satosa:satosa $DATA_DIR /var/log/satosa /var/run/satosa
 
 # satosa-saml-metadata requires valid UTF setting:
 ENV LANG=en_US.utf-8
