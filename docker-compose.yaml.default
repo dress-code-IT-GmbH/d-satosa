@@ -3,36 +3,40 @@ services:
   satosa:
     build:
       context: .
-      dockerfile: Dockerfile.rhel8
+      dockerfile: Dockerfile
     container_name: satosa
     image: r2h2/satosa
     environment:
       # configure TARGET_ENTITYID to temporarily fix SATOSA issue #218
-      TARGET_ENTITYID: https://idp1.test.wpv.portalverbund.at/idp/shibboleth
+      TARGET_ENTITYID: http://wkis.qss.wko.at/adfs/services/trust
       #GUNICORN_CONF: '--reload'
+      VIRTUAL_HOST: proxy1.test.wpv.portalverbund.at
+      VIRTUAL_PORT: 8080
+      HTTPS_METHOD: noredirect
+      LETSENCRYPT_HOST: proxy1.test.wpv.portalverbund.at
     hostname: satosa
     networks:
-      jenkins:
+      proxy:
     #ports:
        #- "8080:8080"
        #- "2022:2022"
     restart: unless-stopped
     volumes:
       - rpmgr.export:/opt/satosa_rpmgr/export:z
-      - satosa.opt_etc:/opt/etc:Z
+      - satosa.opt_etc_satosa:/opt/etc/satosa:Z
       - satosa.var_log:/var/log:Z
       #- satosa.etc_ssh:/etc/ssh:Z
 
 
 networks:
-  jenkins:
-    name: jenkins
+  proxy:
+    name: edge-nginx-network
 
 volumes:
   rpmgr.export:
     name: rpmgr.export
-  satosa.opt_etc:
-    name: satosa.opt_etc
+  satosa.opt_etc_satosa:
+    name: satosa.opt_etc_satosa
   satosa.var_log:
     name: satosa.var_log
   #satosa.etc_ssh:
